@@ -8,3 +8,5 @@ for ($i = 1; $i <= 10; $i++) {
 }
 $media = array_sum($ArrayDez) / count($ArrayDez);
 echo "A média dos valores informados é: " . $media;
+
+
