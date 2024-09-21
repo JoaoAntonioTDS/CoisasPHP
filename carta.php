@@ -55,16 +55,21 @@ function jogarAdivinhacao() {
         }
 
         $escolha = readline("\nEscolha uma carta pelo número (ou digite 0 para desistir): ");
-
-        if ($escolha == 0) {
-            echo "Você desistiu! A carta era: " . $CartaCerta->mostrarCarta() . "\n";
+    if ($escolha > 7 or $escolha < 0){
+        while ($escolha > 7 or $escolha < 0){
+        echo "\nOpção Inválida\n";
+        $escolha = readline("Escolha uma carta pelo número (ou digite 0 para desistir): ");
+        }
+    }
+                if ($escolha == 0) {
+            echo "Voce desistiu, carta certa era " . $CartaCerta->mostrarCarta() . "\n";
             return;
         }
 
         $tentativa++;
 
         if ($baralho[$escolha - 1]->mostrarCarta() == $CartaCerta->mostrarCarta()) {
-            echo "Parabéns! Você acertou a carta " . $CartaCerta->mostrarCarta() . " em $tentativa tentativa(s)!\n";
+            echo "Parabéns, voce acertou a carta " . $CartaCerta->mostrarCarta() . " em $tentativa tentativa\n";
 
             if ($tentativa == 1) {
                 echo "Pontuação: 3\n";
