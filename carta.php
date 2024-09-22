@@ -99,7 +99,7 @@ function jogarAdivinhacao() {
         $tentativa++;
         $Pontos = 0;
         if ($baralho[$escolha - 1]->mostrarCarta() == $CartaCerta->mostrarCarta()) {
-            echo "Parabéns, voce acertou a carta " . $CartaCerta->mostrarCarta() . " em $tentativa tentativa\n";
+            echo "Parabens voce acertou a carta " . $CartaCerta->mostrarCarta() . " em $tentativa tentativa\n";
 
             if ($tentativa == 1) {
                 $Pontos = 3
