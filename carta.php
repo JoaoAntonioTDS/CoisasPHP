@@ -54,34 +54,37 @@ function jogarAdivinhacao() {
             echo ($posicao + 1) . ": " . $carta->mostrarCarta() . "\n";
         }
 
-        $escolha = readline("\nEscolha uma carta pelo número (ou digite 0 para desistir): ");
+        $escolha = readline("\nEscolha uma carta ou digite 0 para desistir: ");
     if ($escolha > 7 or $escolha < 0){
         while ($escolha > 7 or $escolha < 0){
         echo "\nOpção Inválida\n";
-        $escolha = readline("Escolha uma carta pelo número (ou digite 0 para desistir): ");
+        $escolha = readline("Escolha uma carta ou digite 0 para desistir: ");
         }
     }
                 if ($escolha == 0) {
-            echo "Voce desistiu, carta certa era " . $CartaCerta->mostrarCarta() . "\n";
+            echo "Voce desistiu porém a carta certa era " . $CartaCerta->mostrarCarta() . "\n";
             return;
         }
 
         $tentativa++;
-
+        $Pontos = 0;
         if ($baralho[$escolha - 1]->mostrarCarta() == $CartaCerta->mostrarCarta()) {
             echo "Parabéns, voce acertou a carta " . $CartaCerta->mostrarCarta() . " em $tentativa tentativa\n";
 
             if ($tentativa == 1) {
-                echo "Pontuação: 3\n";
+                $Pontos = 3
+                echo "Pontuação: $Pontos\n";
             } elseif ($tentativa == 2) {
-                echo "Pontuação: 2\n";
+                $Pontos = 2
+                echo "Pontuação: $Pontos\n";
             } else {
-                echo "Pontuação: 1\n";
+                $Pontos = 1
+                echo "Pontuação: $Pontos\n";
             }
             return;
         } else {
             echo "Carta errada. Tente novamente.\n";
         }
-    } while (true);
+    } while (true); //Para repetir o código até que tenha alguma ordem de saída
 }
 jogarAdivinhacao();
