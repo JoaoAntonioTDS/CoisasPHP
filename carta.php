@@ -102,13 +102,13 @@ function jogarAdivinhacao() {
             echo "Parabens voce acertou a carta " . $CartaCerta->mostrarCarta() . " em $tentativa tentativa\n";
 
             if ($tentativa == 1) {
-                $Pontos = 3
+                $Pontos = 3;
                 echo "Pontuação: $Pontos\n";
             } elseif ($tentativa == 2) {
-                $Pontos = 2
+                $Pontos = 2;
                 echo "Pontuação: $Pontos\n";
             } else {
-                $Pontos = 1
+                $Pontos = 1;
                 echo "Pontuação: $Pontos\n";
             }
             return;
