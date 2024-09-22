@@ -1,6 +1,7 @@
 <?php
 
 class Carta {
+
     private $numero;
     private $naipe;
 
@@ -9,15 +10,44 @@ class Carta {
         $this->naipe = $naipe;
     }
 
-    public function getNumero() {
+    /**
+     * Get the value of numero
+     */
+    public function getNumero()
+    {
         return $this->numero;
     }
 
-    public function getNaipe() {
+    /**
+     * Set the value of numero
+     */
+    public function setNumero($numero): self
+    {
+        $this->numero = $numero;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of naipe
+     */
+    public function getNaipe()
+    {
         return $this->naipe;
     }
 
-    public function mostrarCarta() {
+    /**
+     * Set the value of naipe
+     */
+    public function setNaipe($naipe): self
+    {
+        $this->naipe = $naipe;
+
+        return $this;
+    }
+    
+    public function mostrarCarta()
+    {
         return $this->numero . " " . $this->naipe;
     }
 }
@@ -27,8 +57,8 @@ function criarBaralho() {
     $Naipes = ['de Copas', 'de Paus', 'de Ouros', 'de Espadas'];
 
     $baralho = [];
-    $SorteiaNmr = array_rand($Numeros, 7);
-
+    $SorteiaNmr = array_rand($Numeros, 7); //Fiz isso pros numeros não se repetir
+    //Eu não fiz isso com os nipes porque eles podem repetir
     for ($i = 0; $i < 7; $i++) {
        
         $NaipeAleatorio = $Naipes[array_rand($Naipes)];
